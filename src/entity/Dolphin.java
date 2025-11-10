@@ -14,4 +14,9 @@ public final class Dolphin extends Aquatic{
     public String toString() {
        return super.toString()+ " Dolphin [swimmingSpeed= "+ swimmingSpeed +"]";
     }
+    Food typeMeat= Food.MEAT;
+    @Override
+    public void eatMeat(Food food) {
+        System.out.println(name + " is eating " + typeMeat);
+    }
 }

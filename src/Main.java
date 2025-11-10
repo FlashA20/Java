@@ -75,17 +75,20 @@ void main() {
 //System.out.println(zoo2.removeAnimal(chat));
     //zoo2.afficherAnimals();
     //System.out.println(zoo2.isZooFull());
-    /*System.out.println("Zoo is full : "+ Zoo.comparerZoo(zoo, zoo2));
-    Terrestrial terrestrial = new Terrestrial();
+    /*System.out.println("Zoo is full : "+ Zoo.comparerZoo(zoo, zoo2));*/
+    Terrestrial lion = new Terrestrial("Lion","leo",3,true,4);
     Dolphin dolphin = new Dolphin("Dolphin","dofdof",1,true,"habitat",1);
-    System.out.println("dolphin : "+dolphin);
-    dolphin.swim();
-    System.out.println(zoo.addAquaticAnimal(dolphin));
+    //System.out.println("dolphin : "+dolphin);
+    //dolphin.swim();
+    //System.out.println(zoo.addAquaticAnimal(dolphin));
     Penguin penguin = new Penguin("Penguin","pengi",2,true,"antarctica",2);
-    Penguin penguin2 = new Penguin("Penguin","pengo",2,true,"antarctica",2);
-    System.out.println(zoo.addAquaticAnimal(penguin));
-    System.out.println(zoo.addAquaticAnimal(penguin2));
-    zoo.DisplayNumberOfAquaticsByType();
-    penguin.swim();*/
+    //System.out.println(zoo.addAquaticAnimal(penguin));
+    //zoo.DisplayNumberOfAquaticsByType();
+    //penguin.swim();
+    dolphin.eatMeat(Food.MEAT);
+    penguin.eatMeat(Food.MEAT);
+    lion.eatPlant(Food.PLANT);
+    lion.eatMeat(Food.MEAT);
+    lion.eatPlantAndMeat(Food.BOTH);
 }
 

@@ -17,4 +17,9 @@ public non-sealed class Penguin extends Aquatic{
     public String toString() {
         return super.toString()+" Penguin [swimmingDepth= " + swimmingDepth + "]";
     }
+    Food typeMeat= Food.MEAT;
+    @Override
+    public void eatMeat(Food food) {
+        System.out.println(name + " is eating " + typeMeat);
+    }
 }

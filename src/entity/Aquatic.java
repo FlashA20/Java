@@ -1,6 +1,6 @@
 package entity;
 
-public abstract sealed class Aquatic extends Animal permits Dolphin,Penguin{
+public abstract sealed class Aquatic extends Animal implements Carnivore<Food> permits Dolphin,Penguin{
     private String habitat;
     public Aquatic() {}
     public Aquatic(String family, String name, int age, boolean isMammal, String habitat){
