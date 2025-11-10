@@ -1,4 +1,6 @@
 import entity.*;
+import Exception.InvalidAgeException;
+import Exception.ZooFullException;
 void main() {
 
    /* ZooManagement zooManagement ;
@@ -26,13 +28,13 @@ void main() {
     System.out.println("chien : "+chien);
     chat.setFamily("chat");
     chat.setName("michou");
-    chat.setAge(3);
+    chat.setAge(-1);
     chat.setMammal(true);
     System.out.println("michou : "+chat);
     frigya.setName("frigya");
     System.out.println("frigya : "+frigya);
     Zoo zoo = new Zoo("my Zoo","tunisie",20);
-    Animal animal = new Animal("Chat","katis",2,true);
+    Animal animal = new Animal("Chat","katis",-1,true);
     Animal animal2 = new Animal("Chien","loulou",1,true);
     zoo.displayZoo();
 
@@ -45,24 +47,35 @@ void main() {
     System.out.println(chat);
     Zoo zoo1 = new Zoo();
     System.out.println(zoo.getAnimals().length);
-    Zoo zoo2 = new Zoo("My zoo","Nabeul",25);
+    Zoo zoo2 = new Zoo("My zoo","Nabeul",3);
     System.out.println(zoo2.getAnimals().length);
     Zoo zoo3 = new Zoo("My zoo","Nabeul",20);
     System.out.println(zoo3.getAnimals().length);
 
     // System.out.println(zoo2.addAnimal(chien));
-    System.out.println(zoo2.searchAnimal(new Animal()));
-    zoo2.afficherAnimals();
-    System.out.println(zoo2.addAnimal1(chat));
-    System.out.println(zoo2.addAnimal1(chat));
-    System.out.println(zoo2.addAnimal1(chien));
+    //System.out.println(zoo2.searchAnimal(new Animal()));
+    //zoo2.afficherAnimals();
+    try {
+
+        //zoo2.addAnimal1(animal);
+        zoo2.addAnimal1(animal2);
+        zoo2.addAnimal1(animal2);
+        zoo2.addAnimal1(animal2);
+        zoo2.addAnimal1(animal2);
+
+
+    } catch (ZooFullException e) {
+        System.out.println("Erreur : " + e.getMessage());
+    } catch (InvalidAgeException i) {
+        System.out.println("Erreur : " + i.getMessage());
+    }
 
     zoo2.afficherAnimals();
 //System.out.println(zoo2.removeAnimal(chien));
 //System.out.println(zoo2.removeAnimal(chat));
-    zoo2.afficherAnimals();
-    System.out.println(zoo2.isZooFull());
-    System.out.println("Zoo is full : "+ Zoo.comparerZoo(zoo, zoo2));
+    //zoo2.afficherAnimals();
+    //System.out.println(zoo2.isZooFull());
+    /*System.out.println("Zoo is full : "+ Zoo.comparerZoo(zoo, zoo2));
     Terrestrial terrestrial = new Terrestrial();
     Dolphin dolphin = new Dolphin("Dolphin","dofdof",1,true,"habitat",1);
     System.out.println("dolphin : "+dolphin);
@@ -73,5 +86,6 @@ void main() {
     System.out.println(zoo.addAquaticAnimal(penguin));
     System.out.println(zoo.addAquaticAnimal(penguin2));
     zoo.DisplayNumberOfAquaticsByType();
+    penguin.swim();*/
 }
 

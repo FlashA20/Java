@@ -8,7 +8,7 @@ public non-sealed class Penguin extends Aquatic{
         this.swimmingDepth = swimmingDepth;
     }
     public void swim(){
-        System.out.println("Penguin is swimming");
+        System.out.println(name + "Penguin is swimming");
     }
     public float getSwimmingDepth() {
         return swimmingDepth;

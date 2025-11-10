@@ -16,10 +16,10 @@ public sealed class Animal permits Aquatic,Terrestrial {
             return age;
         }
         public void setAge(int age) {
-            if(age<=0){
+            /*if(age<=0){
                 System.out.println("Age can't be less than 0");
                 return;
-            }
+            }*/
             this.age = age;
         }
 
@@ -49,6 +49,7 @@ public sealed class Animal permits Aquatic,Terrestrial {
         }
 
         public String toString(){
-            return "entity.entity.Animal [family=" + family + ", name=" + name + ", age=" + age + "]";
+            return "entity.Animal [family=" + family + ", name=" + name + ", age=" + age + "]";
         }
+
 }

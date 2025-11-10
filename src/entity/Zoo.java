@@ -1,5 +1,6 @@
 package entity;
-
+import Exception.ZooFullException;
+import Exception.InvalidAgeException;
 public class Zoo {
         private   Animal[] animals;
         private  String name;
@@ -36,20 +37,17 @@ public class Zoo {
             return false;
         }
 
-        public boolean addAnimal1(Animal animal){
-            if (searchAnimal(animal)!=-1)
-                return true;
-            if (isZooFull())
-                return false;
-            if (animals.length >= nbAnimals) {
-                if (animals[nbAnimals] != null) {
-                    nbAnimals++;
-                }
-                System.out.println(nbAnimals);
-                animals[nbAnimals] = animal;
-                return true;
+        public void addAnimal1(Animal animal) throws ZooFullException, InvalidAgeException {
+            if(animals.length==nbAnimals) {
+                throw new ZooFullException("Zoo is full");
             }
-            return false;
+            if(animal.age <0){
+                throw new InvalidAgeException("Age can't be negative");
+            }
+
+            System.out.println(nbAnimals);
+            animals[nbAnimals] = animal;
+            nbAnimals++;
 
         }
 
@@ -206,7 +204,7 @@ public class Zoo {
             int dolphins = 0;
             int penguins = 0;
             for (int i = 0; i < aquaticAnimals.length; i++) {
-                if (aquaticAnimals[i] instanceof Dolphin) {
+                if (aquaticAnimals[i]!=null && aquaticAnimals[i].getClass()==Dolphin.class) {
                     dolphins++;
                 } else if (aquaticAnimals[i] instanceof Penguin) {
                     penguins++;
